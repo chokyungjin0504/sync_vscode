@@ -8,7 +8,7 @@ sap.ui.define([
     return UIComponent.extend("ui5.walkthrough.Component", {
        metadata : {
             interfaces: ["sap.ui.core.IAsyncContentCreation"],
-            manifest: "json"
+            manifest: "json" //루트뷰,, 등 다양한 정보가 있음.
         //   "interfaces": ["sap.ui.core.IAsyncContentCreation"],
         //   "rootView": {
         //      "viewName": "ui5.walkthrough.view.App",
