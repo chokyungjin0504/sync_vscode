@@ -2,32 +2,32 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel",
+   //  "sap/ui/model/json/JSONModel",
+   //  "sap/ui/model/resource/ResourceModel",
   ],
-  (Controller, MessageToast, JSONModel, ResourceModel) => {
+  (Controller, MessageToast) => {
     // define에서 controller, messagetoast 순서로 받았으니
     // 인자도 순서대로 받는다
     "use strict";
 
     return Controller.extend("ui5.walkthrough.controller.App", {
-      onInit() {
-        // 1. 기본 JSON set data model on view {key: value, key: value}
-        const oData = {
-          recipient: {
-            name: "World",
-          },
-        };
-        const oModel = new JSONModel(oData);
-        this.getView().setModel(oModel);
+      // onInit() {
+      //   // 1. 기본 JSON set data model on view {key: value, key: value}
+      //   const oData = {
+      //     recipient: {
+      //       name: "World",
+      //     },
+      //   };
+      //   const oModel = new JSONModel(oData);
+      //   this.getView().setModel(oModel);
 
-        //2. Resource Model (i18n)
-        //resource bundle에서 파일을 가져온다
-        const i18nModel = new ResourceModel({
-          bundleName: "ui5.walkthrough.i18n.i18n",
-        }); //리소스 모델의 대상 데이터에 경로 안내 (파일 로드)
-        this.getView().setModel(i18nModel, "i18n"); //모델 이름
-      },
+      //   //2. Resource Model (i18n)
+      //   //resource bundle에서 파일을 가져온다
+      //   const i18nModel = new ResourceModel({
+      //     bundleName: "ui5.walkthrough.i18n.i18n",
+      //   }); //리소스 모델의 대상 데이터에 경로 안내 (파일 로드)
+      //   this.getView().setModel(i18nModel, "i18n"); //모델 이름
+      // },
 
       onShowHello() {
         //getModel() -> jason 모델을 의미(default니까) recipient에 있는 name을 가져온다
