@@ -1,0 +1,41 @@
+<mvc:View controllerName="project7.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="{i18n>Title}">
+        <mvc:XMLView viewName="project7.view.Create"/>
+        <Table items="{myModel>/zcarr_d22Set}">
+            <columns>
+                <Column >
+                    <header>
+                        <Label text="Carrier ID"></Label>
+                    </header>
+                </Column>
+                <Column >
+                    <header>
+                        <Label text="Carrier Name"></Label>
+                    </header>
+                </Column>
+                <Column >
+                    <header>
+                        <Label text="Currency Code"></Label>
+                    </header>
+                </Column>
+                <Column >
+                    <header>
+                        <Label text="Website"></Label>
+                    </header>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{myModel>Carrid}"/>
+                        <Text text="{myModel>Carrname}"/>
+                        <Text text="{myModel>Currcode}"/>
+                        <Link text="{myModel>Url}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

@@ -1,0 +1,13 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page title="{i18n>title}">
+        <content>
+            <List headerText="{i18n>title}" class="sapUiResponsiveMargin" width="auto" items="{products>/Product}">
+                <items>
+                    <ObjectListItem title="{products>name}" number="{products>price}" icon="{products>icon}" />
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

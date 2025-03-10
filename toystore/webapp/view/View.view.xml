@@ -1,0 +1,9 @@
+<mvc:View controllerName="toystore.toystore.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Panel headerText="{i18n>viewTitle}" class="sapUiResponsiveMargin" width="auto">
+        <content>
+            <Button id="todayButton" icon="sap-icon://da" text="{i18n>openBtnText}" press=".onOpenDialog" class="sapUiSmallMarginEnd"/>
+        </content>
+    </Panel>
+</mvc:View>

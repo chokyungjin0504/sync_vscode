@@ -1,0 +1,13 @@
+<mvc:View displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+        <pages>
+            <Page>
+                <content>
+                    <mvc:XMLView viewName="product.view.ProductList"/>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

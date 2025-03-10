@@ -1,0 +1,13 @@
+<mvc:View controllerName="sync.d22.exercise2206.controller.App" displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+        <pages>
+            <Page>
+                <content>
+                    <!-- <mvc:XMLView viewName="ui5.exercise_22_06.view.View"/> -->
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

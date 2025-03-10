@@ -1,0 +1,24 @@
+<mvc:View controllerName="sync.d22.exercised2205.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+        <pages>
+            <Page>
+                <content>
+                <Label id="label"
+                text="입력하세요"
+                required="true"
+                ></Label>
+                         <Input
+            id="input"
+            value="{/input}"
+            width="60%"/>
+                     <Button id="button"
+            text="메시지출력"
+            press=".onPress"/>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

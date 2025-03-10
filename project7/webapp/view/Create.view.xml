@@ -1,0 +1,22 @@
+<mvc:View displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+
+    <!-- Create Page -->
+
+    <l:VerticalLayout class="sapUiContentPadding" width="30%">
+        <Label text="Carrier ID" labelFor="input-a"/>
+        <Input id="input-a" required="true" placeholder="ex) AA"/>
+        <Label text="Carrier Name" labelFor="input-b"/>
+        <Input id="input-b" required="true" placeholder="ex) Air Berlin"/>
+        <Label text="Currency Code" labelFor="input-c"/>
+        <Input id="input-c" required="true" placeholder="ex) EU"/>
+        <Label text="Website" labelFor="input-d"/>
+        <Input id="input-d" required="true" placeholder="ex) http://www.ab.com/"/>
+
+        <Button id="createBtn" text="Create" width="30%" press=".onCreate"/>
+
+    </l:VerticalLayout>
+
+</mvc:View>
