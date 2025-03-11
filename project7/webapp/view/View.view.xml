@@ -1,41 +1,79 @@
 <mvc:View controllerName="project7.controller.View"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
     <Page title="{i18n>Title}">
-        <mvc:XMLView viewName="project7.view.Create"/>
-        <Table items="{myModel>/zcarr_d22Set}">
-            <columns>
-                <Column >
-                    <header>
-                        <Label text="Carrier ID"></Label>
-                    </header>
-                </Column>
-                <Column >
-                    <header>
-                        <Label text="Carrier Name"></Label>
-                    </header>
-                </Column>
-                <Column >
-                    <header>
-                        <Label text="Currency Code"></Label>
-                    </header>
-                </Column>
-                <Column >
-                    <header>
-                        <Label text="Website"></Label>
-                    </header>
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem >
-                    <cells>
-                        <Text text="{myModel>Carrid}"/>
-                        <Text text="{myModel>Carrname}"/>
-                        <Text text="{myModel>Currcode}"/>
-                        <Link text="{myModel>Url}"/>
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
+        <!-- 입력필드 -->
+        <Panel class="sapUiResponsiveMargin" width="auto">
+            <VBox class="sapUiContentPadding" alignItems="Center">
+                <VBox width="30%">
+
+                    <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMarginTop">
+                        <Label text="Carrier ID" labelFor="input-a" width="100%" />
+                        <Input id="input-a" required="true" placeholder="ex) AA" width="100%" />
+                    </HBox>
+
+                    <HBox justifyContent="SpaceBetween" alignItems="Center">
+                        <Label text="Carrier Name" labelFor="input-b" width="100%" />
+                        <Input id="input-b" required="true" placeholder="ex) Air Berlin" width="100%" />
+                    </HBox>
+
+                    <HBox justifyContent="SpaceBetween" alignItems="Center">
+                        <Label text="Currency Code" labelFor="input-c" width="100%" />
+                        <Input id="input-c" required="true" placeholder="ex) EU" width="100%" />
+                    </HBox>
+
+                    <HBox justifyContent="SpaceBetween" alignItems="Center">
+                        <Label text="Website" labelFor="input-d" width="100%" />
+                        <Input id="input-d" required="true" placeholder="ex) http://www.ab.com/" width="100%" />
+                    </HBox>
+
+                    <HBox justifyContent="SpaceBetween" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+                        <Button id="createBtn" text="Create" width="auto" press=".onCreate" type="Emphasized" />
+                        <Button id="deleteBtn" text="Delete" width="auto" press=".onDelete" type="Emphasized" />
+                        <Button id="updateBtn" text="Update" width="auto" press=".onUpdate" type="Emphasized" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Panel>
+
+
+        <!-- 테이블 -->
+        <Panel class="sapUiResponsiveMargin" width="auto">
+            <Table items="{myModel>/zcarr_d22Set}" mode="SingleSelect" id="myTable">
+                <columns>
+                    <Column >
+                        <header>
+                            <Label text="Carrier ID"></Label>
+                        </header>
+                    </Column>
+                    <Column >
+                        <header>
+                            <Label text="Carrier Name"></Label>
+                        </header>
+                    </Column>
+                    <Column >
+                        <header>
+                            <Label text="Currency Code"></Label>
+                        </header>
+                    </Column>
+                    <Column >
+                        <header>
+                            <Label text="Website"></Label>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{myModel>Carrid}"/>
+                            <Text text="{myModel>Carrname}"/>
+                            <Text text="{myModel>Currcode}"/>
+                            <Link text="{myModel>Url}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </Panel>
     </Page>
 </mvc:View>
