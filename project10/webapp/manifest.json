@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "project9",
+    "id": "project10",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,18 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.16.5",
-      "toolsId": "afcecf96-f417-440f-b05a-e9eda850b0e4"
-    },
-    "dataSources": {
-      "mainService": {
-        "uri": "/v2/northwind/northwind.svc/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "localUri": "localService/mainService/metadata.xml",
-          "odataVersion": "2.0"
-        }
-      }
+      "toolsId": "5c64d4ce-f974-440c-947b-42512681aa44"
     }
   },
   "sap.ui": {
@@ -49,8 +38,7 @@
       "minUI5Version": "1.133.0",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {},
-        "sap.viz": {}
+        "sap.ui.core": {}
       }
     },
     "contentDensities": {
@@ -61,13 +49,8 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "project9.i18n.i18n"
+          "bundleName": "project10.i18n.i18n"
         }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {}
       }
     },
     "resources": {
@@ -85,26 +68,36 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "project9.view",
+        "path": "project10.view",
         "async": true,
-        "viewPath": "project9.view"
+        "viewPath": "project10.view"
       },
       "routes": [
         {
-          "name": "RouteView",
+          "name": "RouteMain",
           "pattern": ":?query:",
-          "target": ["TargetView"]
+          "target": ["TargetMain"]
+        },
+        {
+          "name": "RouteDetail",
+          "pattern": "detail/{key1}/:key2:",
+          "target": ["TargetDetail"]
         }
       ],
       "targets": {
-        "TargetView": {
-          "id": "View",
-          "name": "View"
+        "TargetMain": {
+          "id": "Main",
+          "name": "Main"
+        },
+        "TargetDetail": {
+          "viewType": "XML",
+          "viewId": "Detail",
+          "viewName": "Detail"
         }
       }
     },
     "rootView": {
-      "viewName": "project9.view.App",
+      "viewName": "project10.view.App",
       "type": "XML",
       "id": "App"
     }

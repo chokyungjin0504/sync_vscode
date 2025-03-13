@@ -4,22 +4,27 @@
     xmlns:viz="sap.viz.ui5.controls"
     xmlns:viz.data="sap.viz.ui5.data"
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
-    <Page id="page" title="{i18n>title}">
-        <viz:VizFrame vizType="column" width="100%" height="400px">
+
+    <Page id="page" title="Top 5 Products by Stock">
+        <viz:VizFrame id="idColumnChart" vizType="column" width="100%" height="400px">
             <viz:dataset>
-                <viz.data:FlattenedDataset data="{myModel>/ZORDER_D22Set}">
+                <viz.data:FlattenedDataset data="{chart>/data}">
                     <viz.data:dimensions>
-                        <viz.data:DimensionDefinition name="ProductID" value="{myModel>ProductID}" />
+                        <viz.data:DimensionDefinition name="ProductID" value="{chart>ProductID}" />
+                    </viz.data:dimensions>
+                    <viz.data:dimensions>
+                        <viz.data:DimensionDefinition name="ProductName" value="{chart>ProductName}" />
                     </viz.data:dimensions>
                     <viz.data:measures>
-                        <viz.data:MeasureDefinition name="UnitsInStock" value="{myModel>UnitsInStock}"/>
+                        <viz.data:MeasureDefinition name="Units In Stock" value="{chart>UnitsInStock}" />
                     </viz.data:measures>
                 </viz.data:FlattenedDataset>
             </viz:dataset>
 
             <viz:feeds>
+                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Units In Stock" />
                 <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="ProductID" />
-                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="UnitsInStock" />
+                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="ProductName" />
             </viz:feeds>
         </viz:VizFrame>
     </Page>

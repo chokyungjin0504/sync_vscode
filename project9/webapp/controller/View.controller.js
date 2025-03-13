@@ -2,32 +2,27 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/odata/v2/ODataModel",
-    "sap/ui/model/JSONModel",
+    "sap/ui/model/json/JSONModel",
   ],
   (Controller, ODataModel, JSONModel) => {
     "use strict";
 
     return Controller.extend("project9.controller.View", {
       onInit() {
-        var oDataModel = ODataModel("sap/opu/odata/sap/ZORDER_D22_SRV");
-        this.getView().setModel(oDataModel, "myModel");
+        const oDataModel = new ODataModel("/v2/northwind/northwind.svc/");
 
-        // const oDataModel = {
-        //   ProductID,
-        //   UnitsInStock,
-        // };
+        oDataModel.read("/Products", {
+          success: function (oData) {
+            const aSortedData = oData.results.sort(
+              (a, b) => b.UnitsInStock - a.UnitsInStock
+            );
 
-        // oDataModel.read("/ZORDER_D22Set", {
-        //   success: function (oData) {
-        //     var oChartModel = new JSONModel({ data: oData.results });
+            const aTop5Data = aSortedData.slice(0, 5);
 
-        //     this.getView().setModel(oChartModel, "chart");
-        //   }.bind(this),
-
-        //   error: function (oError) {
-        //     console.error("ODataModel 읽기 실패:", oError);
-        //   },
-        // });
+            const oChartModel = new JSONModel({ data: aTop5Data });
+            this.getView().setModel(oChartModel, "chart");
+          }.bind(this),
+        });
       },
     });
   }

@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "project9",
+    "id": "project82",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,18 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.16.5",
-      "toolsId": "afcecf96-f417-440f-b05a-e9eda850b0e4"
-    },
-    "dataSources": {
-      "mainService": {
-        "uri": "/v2/northwind/northwind.svc/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "localUri": "localService/mainService/metadata.xml",
-          "odataVersion": "2.0"
-        }
-      }
+      "toolsId": "3f9e755b-977d-4c46-a986-9dc8c69d109d"
     }
   },
   "sap.ui": {
@@ -61,13 +50,8 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "project9.i18n.i18n"
+          "bundleName": "project82.i18n.i18n"
         }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {}
       }
     },
     "resources": {
@@ -85,9 +69,9 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "project9.view",
+        "path": "project82.view",
         "async": true,
-        "viewPath": "project9.view"
+        "viewPath": "project82.view"
       },
       "routes": [
         {
@@ -104,7 +88,7 @@
       }
     },
     "rootView": {
-      "viewName": "project9.view.App",
+      "viewName": "project82.view.App",
       "type": "XML",
       "id": "App"
     }
