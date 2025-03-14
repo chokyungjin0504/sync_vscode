@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog id="helloDialog" title="Hello" class="sapUiResponsivePadding" draggable="true" resizable="true">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Text text="이름: {dialogModel>/Name}" />
+                <Text text="학급: {dialogModel>/class}" />
+                <Text text="성별: {dialogModel>/gender}" />
+            </VBox>
+        </content>
+        <beginButton>
+            <Button text="닫기" press="onCloseDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

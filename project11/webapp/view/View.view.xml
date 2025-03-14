@@ -10,10 +10,7 @@
                 <core:Item key="남성" text="남성" />
                 <core:Item key="여성" text="여성" />
             </Select>
-            <!-- <Select forceSelection="false" items="{path: 'data>/data'
-            , sorter: { path: 'data>gender'}}">
-                <core:ListItem key="{data>gender}" text="{data>gender}"></core:ListItem>
-            </Select> -->
+            <Button text="차트" press=".onShowChart"/>
         </content>
 
         <content>
@@ -46,7 +43,7 @@
                             <Text text="{data>Name}" />
                             <Text text="{data>class}" />
                             <Text text="{data>gender}" />
-                            <Button text="Button" />
+                            <Button text="Button" press=".onShowDetail" />
                         </cells>
                     </ColumnListItem>
                 </items>
