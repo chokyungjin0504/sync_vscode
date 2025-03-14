@@ -3,7 +3,6 @@ sap.ui.define(["sap/ui/core/format/DateFormat"], (DateFormat) => {
 
   return {
     formatDate(sBirthdate) {
-      console.log(123);
       const oDateFormat = DateFormat.getDateInstance({ pattern: "yyyy/MM/dd" });
 
       return oDateFormat.format(new Date(sBirthdate));

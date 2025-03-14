@@ -6,5 +6,41 @@
             <Button text="Detail" press=".onGoDetail"/>
             <Input id = "idInput" width="30%" />
         </content>
+        <content>
+            <Table id="mTable" items="{student>/student}" mode="SingleSelect">
+                <columns>
+                    <Column>
+                        <header>
+                            <Label text="No" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Name" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Gender" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Birthdate" />
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{student>no}" />
+                            <Text text="{student>name}" />
+                            <Text text="{student>gender}" />
+                            <Text text="{student>birthdate}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>

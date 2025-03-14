@@ -1,9 +1,43 @@
 <mvc:View controllerName="project10.controller.Detail"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <Page id="pageDetail" title="{i18n>title}" showNavButton="true" navButtonPress=".onGoBack">
         <content>
-            <Text text="Detail Page"/>
+            <Table id="msTable">
+                <columns>
+                    <Column>
+                        <header>
+                            <Label text="No" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Name" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Gender" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Birthdate" />
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{mainModel>/key1}" />
+                            <Text text="{mainModel>/key2}" />
+                            <Text text="{mainModel>/key3}" />
+                            <Text text="{mainModel>/key4}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
         </content>
     </Page>
 </mvc:View>

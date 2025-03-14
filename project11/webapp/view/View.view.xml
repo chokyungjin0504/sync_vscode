@@ -1,0 +1,56 @@
+<mvc:View controllerName="project11.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <SearchField width="50%" search=".onFilterClass" placeholder="Class"/>
+            <Select width="40%" forceSelection="false" selectedKey="" change=".onSelectGender">
+                <core:Item key="" text="전체" />
+                <core:Item key="남성" text="남성" />
+                <core:Item key="여성" text="여성" />
+            </Select>
+            <!-- <Select forceSelection="false" items="{path: 'data>/data'
+            , sorter: { path: 'data>gender'}}">
+                <core:ListItem key="{data>gender}" text="{data>gender}"></core:ListItem>
+            </Select> -->
+        </content>
+
+        <content>
+            <Table id="mTable" items="{data>/data}" mode="SingleSelect">
+                <columns>
+                    <Column>
+                        <header>
+                            <Label text="Name" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Class" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Gender" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Details" />
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{data>Name}" />
+                            <Text text="{data>class}" />
+                            <Text text="{data>gender}" />
+                            <Button text="Button" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
