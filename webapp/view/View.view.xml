@@ -1,0 +1,18 @@
+<mvc:View controllerName="store.mentoring.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <App>
+        <pages>
+            <Page title="{i18n>title}">
+                <content>
+                    <Panel>
+                        <content>
+                            <mvc:XMLView viewName="store.mentoring.view.ProductList"/>
+                        </content>
+                    </Panel>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
