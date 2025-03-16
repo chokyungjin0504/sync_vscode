@@ -1,0 +1,36 @@
+{
+    "Products": [
+        {
+            "ProductName": "노트북",
+            "Quantity": 2,
+            "Price": 1500000,
+            "OrderID": "101",
+            "ShippedDate": "2015-04-01T00:00:00",
+            "Status": "Shipping"
+        },
+        {
+            "ProductName": "키보드",
+            "Quantity": 7,
+            "Price": 50000,
+            "OrderID": "102",
+            "ShippedDate": "2024-02-22",
+            "Status": "Shipped"
+        },
+        {
+            "ProductName": "모니터",
+            "Quantity": 10,
+            "Price": 300000,
+            "OrderID": "103",
+            "ShippedDate": "2015-03-02T00:00:00",
+            "Status": "Ordered"
+        },
+        {
+            "ProductName": "멀티탭",
+            "Quantity": 1,
+            "Price": 250000,
+            "OrderID": "104",
+            "ShippedDate": "2015-04-12T00:00:00",
+            "Status": "Ordered"
+        }
+    ]
+}

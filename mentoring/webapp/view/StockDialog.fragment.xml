@@ -1,0 +1,42 @@
+<core:FragmentDefinition
+    controllerName="store.mentoring.controller.ProductList"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog 
+        id="stockDialog"
+        title="재고 부족 상품">
+        <content>
+            <List
+                id="stockList"
+                items="{product>/Products}">
+                <items>
+                    <ObjectListItem 
+                        core:require="{
+                            Formatter: 'store/mentoring/model/formatter'
+                        }"
+                        title="{
+                            parts: [
+                                {path:'product>OrderID'},
+                                {path:'product>ProductName'}
+                            ],
+                        formatter: 'Formatter.formatProductTitle.bind($controller)'
+                        }"
+                        number="{
+                            parts: [
+                                {path: 'product>Quantity'}
+                            ],
+                        formatter: 'Formatter.formatProductNumber.bind($controller)'
+                        }"
+                    >
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <beginButton>
+            <Button 
+                text="{i18n>dialogCloseBtnText}"
+                press="onCloseStock">   
+            </Button>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

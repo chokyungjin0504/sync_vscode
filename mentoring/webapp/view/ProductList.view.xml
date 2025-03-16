@@ -1,0 +1,79 @@
+<mvc:View
+    controllerName="store.mentoring.controller.ProductList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <List 
+        id="productList"
+        headerText="{i18n>title}"
+        class="sapUiResponseMargin"
+        width="auto"
+        items="{product>/Products}">
+        <headerToolbar>
+            <Toolbar>
+                <Title text="{i18n>smallTitle}"/>
+            <ToolbarSpacer/>
+                   
+            <CheckBox 
+                text="배송완료"
+                select=".onChkBox"
+            ></CheckBox>
+            <Button
+                text="{i18n>btnText}"
+                press=".onShowStock"
+                type="Emphasized">
+            </Button>
+            <SearchField
+                width="50%"
+                placeholder="상품명 검색"
+                search=".onFilterProducts"/>
+            </Toolbar>
+        </headerToolbar>
+        <items>
+            <ObjectListItem 
+                intro="{product>OrderID}"
+                title="{product>ProductName}"
+                number="{ 
+                    parts: [
+                        'product>Price',
+                        'view>/currency'
+                    ],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: false
+                    }
+                 }"
+                 numberUnit="{view>/currency}">
+                 <firstStatus>
+                    <ObjectStatus 
+                        core:require="{
+                            Formatter: 'store/mentoring/model/formatter'
+                        }"
+                        text="{ 
+                            path: 'product>Status',
+                            formatter: 'Formatter.statusText.bind($controller)'
+                         }"
+                        state="{ 
+                            path: 'product>Status',
+                            formatter: 'Formatter.statusColor.bind($controller)'
+                         }"
+                    ></ObjectStatus>
+                 </firstStatus>
+                 <secondStatus>
+                    <ObjectStatus
+                        core:require="{
+                        Formatter: 'store/mentoring/model/formatter'
+                        }"
+                        text="{
+                            parts: [
+                                {path: 'product>Status'},
+                                {path: 'product>ShippedDate'}
+                            ],
+                            formatter: 'Formatter.statusDate.bind($controller)'
+                        }">
+                    </ObjectStatus>
+                 </secondStatus>
+            </ObjectListItem>
+        </items>
+    </List>
+</mvc:View>
