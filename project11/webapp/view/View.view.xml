@@ -2,16 +2,31 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Page id="page" title="{i18n>title}">
-        <content>
-            <SearchField width="50%" search=".onFilterClass" placeholder="Class"/>
-            <Select width="40%" forceSelection="false" selectedKey="" change=".onSelectGender">
-                <core:Item key="" text="전체" />
-                <core:Item key="남성" text="남성" />
-                <core:Item key="여성" text="여성" />
-            </Select>
-            <Button text="차트" press=".onShowChart"/>
-        </content>
+    <Page id="page">
+        <Panel headerText="CLASS" class="sapUiResponsiveMargin" width="auto">
+            <!-- 조회조건 + 버튼들을 같은 줄에 배치 -->
+            <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMarginBottom">
+                <Title text="조회조건" />
+                <HBox>
+                    <Button text="검색" press=".onFilterClass" type="Emphasized"/>
+                    <Button text="차트" press=".onShowChart" class="sapUiSmallMarginBegin" />
+                </HBox>
+            </HBox>
+            <VBox class="sapUiContentPadding" alignItems="Center">
+                <VBox width="auto">
+                    <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMarginTop">
+                        <Text text="CLASS: " />
+                        <Input id="class" required="true" width="auto" placeholder="Class" />
+                        <Select selectedKey="{/SelectedGender}" change=".onSelectGender" forceSelection="false" width="auto">
+                            <core:Item key="" text="전체" />
+                            <core:Item key="남성" text="남성" />
+                            <core:Item key="여성" text="여성" />
+                        </Select>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+        </Panel>
 
         <content>
             <Table id="mTable" items="{data>/data}" mode="SingleSelect">

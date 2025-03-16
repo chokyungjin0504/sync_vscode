@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Dialog id="helloDialog" title="Hello" class="sapUiResponsivePadding" draggable="true" resizable="true">
+    <Dialog id="helloDialog" title="상세정보" class="sapUiResponsivePadding" draggable="true" resizable="true">
         <content>
             <VBox class="sapUiSmallMargin">
                 <Text text="이름: {dialogModel>/Name}" />
